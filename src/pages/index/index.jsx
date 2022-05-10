@@ -1,45 +1,86 @@
 import React, { Component } from 'react'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
+import Taro from '@tarojs/taro'
+import HistoryTest from '../../components/HistoryTest'
 
 export default class Index extends Component {
-
   textRef = React.createRef()
 
   state = {
     count: 1
   }
 
-  componentWillMount () { }
+  componentWillMount() {}
 
-  componentDidMount () {
-    // console.log(Taro)
-    setTimeout(() => {
-      this.setState({count: ++this.state.count})
-      console.log('A.count结果:', this.state.count)
-      this.setState({count: ++this.state.count})
-      console.log('B.count结果:', this.state.count)
-    }, 3000);
+  componentDidMount() {
+    // console.log('window:', window)
+    // console.log(Taro.getApp())
 
-    this.textRef.current.addEventListener('tap', ()=>{
-      this.setState({count: ++this.state.count})
-      console.log('C.count结果:', this.state.count)
-      this.setState({count: ++this.state.count})
-      console.log('D.count结果:', this.state.count)
-    })
+    // 定时器回调batch updates
+    // setTimeout(() => {
+    //   this.setState({count: ++this.state.count})
+    //   console.log('A.count结果:', this.state.count)
+    //   this.setState({count: ++this.state.count})
+    //   console.log('B.count结果:', this.state.count)
+    // }, 3000);
+    // // 原生回调事件
+    // this.textRef.current.addEventListener('tap', ()=>{
+    //   this.setState({count: ++this.state.count})
+    //   console.log('C.count结果:', this.state.count)
+    //   this.setState({count: ++this.state.count})
+    //   console.log('D.count结果:', this.state.count)
+    // })
+    console.log('window:', window)
+    console.log('getCurrentPages:', Taro.getCurrentPages())
   }
 
-  componentWillUnmount () { }
+  componentWillUnmount() {}
 
-  componentDidShow () { }
+  componentDidShow() {}
 
-  componentDidHide () { }
+  componentDidHide() {}
 
-  render () {
-    console.log('触发视图render')
+  render() {
     return (
-      <View className='index'>
-        <Text ref={this.textRef}>Hello world!{this.state.count}</Text>
+      <View className="index">
+        <View>
+          <Text ref={this.textRef}>Hello React18!{this.state.count}</Text>
+        </View>
+
+        <View
+          onClick={() => {
+            Taro.navigateTo({url: '../browser-router/index?name=hongxin&age=30'})
+          }}
+        >
+          Go to "browser-router" page
+        </View>
+
+        <View
+          onClick={() => {
+            Taro.navigateTo({url: '../hash-router/index?name=hongxin&age=30'})
+          }}
+        >
+          Go to "hash-router" page
+        </View>
+
+        <View
+          onClick={() => {
+            Taro.navigateTo({url: '../history/index?name=history&age=30'})
+          }}
+        >
+          Go to "history" page
+        </View>
+
+        <View
+          onClick={() => {
+            Taro.redirectTo({url: '../alipay-scan/index?name=alipay&age=40#a=1'})
+          }}
+        >
+          Go to "alipay-scan" page
+        </View>
+
+        {/* <HistoryTest {...this.props}></HistoryTest> */}
       </View>
     )
   }

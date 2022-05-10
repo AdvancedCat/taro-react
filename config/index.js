@@ -9,8 +9,9 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: [],
   defineConstants: {
+    HXHXHX: '"index"',
+    AAAAAA: '"aaaaa"'
   },
   copy: {
     patterns: [
@@ -60,7 +61,13 @@ const config = {
         }
       }
     }
-  }
+  },
+  plugins: [
+    // ['@tarojs/plugin-framework-react', {
+    //   reactMode: 'concurrent'
+    // }]
+    '@tarojs/plugin-html'
+  ]
 }
 
 module.exports = function (merge) {
