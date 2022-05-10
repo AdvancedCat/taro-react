@@ -1,3 +1,3 @@
 export default definePageConfig({
-  navigationBarTitleText: 'browser路由'
+  navigationBarTitleText: 'Web路由'
 })

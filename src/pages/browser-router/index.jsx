@@ -4,10 +4,10 @@ import { View, Button, Text } from '@tarojs/components'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import './index.scss'
 
-import Home from './home'
-import View1 from './view1'
-import View2 from './view2'
-import View3 from './view3'
+import Home from '../../components/home'
+import View1 from '../../components/view1'
+import View2 from '../../components/view2'
+import View3 from '../../components/view3'
 
 export default class Index extends Component {
   componentDidMount() {

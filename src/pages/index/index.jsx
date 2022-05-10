@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
 import Taro from '@tarojs/taro'
-import HistoryTest from '../../components/HistoryTest'
 
 export default class Index extends Component {
   textRef = React.createRef()
@@ -14,8 +13,6 @@ export default class Index extends Component {
   componentWillMount() {}
 
   componentDidMount() {
-    // console.log('window:', window)
-    // console.log(Taro.getApp())
 
     // 定时器回调batch updates
     // setTimeout(() => {
@@ -50,7 +47,7 @@ export default class Index extends Component {
 
         <View
           onClick={() => {
-            Taro.navigateTo({url: '../browser-router/index?name=hongxin&age=30'})
+            Taro.navigateTo({url: '../browser-router/index?name=webrouter&age=30'})
           }}
         >
           Go to "browser-router" page
@@ -58,7 +55,7 @@ export default class Index extends Component {
 
         <View
           onClick={() => {
-            Taro.navigateTo({url: '../hash-router/index?name=hongxin&age=30'})
+            Taro.navigateTo({url: '../hash-router/index?name=hashrouter&age=30'})
           }}
         >
           Go to "hash-router" page
@@ -74,13 +71,11 @@ export default class Index extends Component {
 
         <View
           onClick={() => {
-            Taro.redirectTo({url: '../alipay-scan/index?name=alipay&age=40#a=1'})
+            Taro.redirectTo({url: '../alipay-scan/index?name=alipay&age=40'})
           }}
         >
           Go to "alipay-scan" page
         </View>
-
-        {/* <HistoryTest {...this.props}></HistoryTest> */}
       </View>
     )
   }
