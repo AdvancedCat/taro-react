@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
 import Taro from '@tarojs/taro'
+import { Empty, NavBar, Button } from 'tard'
 
 export default class Index extends Component {
   textRef = React.createRef()
@@ -13,7 +14,6 @@ export default class Index extends Component {
   componentWillMount() {}
 
   componentDidMount() {
-
     // 定时器回调batch updates
     // setTimeout(() => {
     //   this.setState({count: ++this.state.count})
@@ -41,41 +41,37 @@ export default class Index extends Component {
   render() {
     return (
       <View className="index">
-        <View>
-          <Text ref={this.textRef}>Hello React18!{this.state.count}</Text>
-        </View>
+        <NavBar title="React Router 测试" />
 
-        <View
+        <Button
+          full
+          type="primary"
           onClick={() => {
-            Taro.navigateTo({url: '../browser-router/index?name=webrouter&age=30'})
+            Taro.navigateTo({ url: '../browser-router/index?name=webrouter&age=30' })
           }}
         >
           Go to "browser-router" page
-        </View>
+        </Button>
 
-        <View
+        <Button
+          full
+          type="primary"
           onClick={() => {
-            Taro.navigateTo({url: '../hash-router/index?name=hashrouter&age=30'})
+            Taro.navigateTo({ url: '../hash-router/index?name=hashrouter&age=30' })
           }}
         >
           Go to "hash-router" page
-        </View>
+        </Button>
 
-        <View
+        <Button
+          full
+          type="primary"
           onClick={() => {
-            Taro.navigateTo({url: '../history/index?name=history&age=30'})
+            Taro.navigateTo({ url: '../history/index?name=history&age=30' })
           }}
         >
           Go to "history" page
-        </View>
-
-        <View
-          onClick={() => {
-            Taro.redirectTo({url: '../alipay-scan/index?name=alipay&age=40'})
-          }}
-        >
-          Go to "alipay-scan" page
-        </View>
+        </Button>
       </View>
     )
   }

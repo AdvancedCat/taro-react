@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import 'tard/dist/styles/index.less'
 import './app.scss'
 
 class App extends Component {
