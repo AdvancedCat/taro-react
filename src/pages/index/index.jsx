@@ -33,6 +33,16 @@ export default class Index extends Component {
           full
           type="primary"
           onClick={() => {
+            Taro.navigateTo({ url: '../history/index?name=history&age=30' })
+          }}
+        >
+          Go to "history" page
+        </Button>
+
+        <Button
+          full
+          type="primary"
+          onClick={() => {
             Taro.navigateTo({ url: '../browser-router/index?name=webrouter&age=30' })
           }}
         >
@@ -53,11 +63,13 @@ export default class Index extends Component {
           full
           type="primary"
           onClick={() => {
-            Taro.navigateTo({ url: '../history/index?name=history&age=30' })
+            Taro.navigateTo({ url: '../router-object/index?name=hashrouter&age=30' })
           }}
         >
-          Go to "history" page
+          Go to "router-object" page
         </Button>
+
+
       </View>
     )
   }

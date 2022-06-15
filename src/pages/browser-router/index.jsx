@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text } from '@tarojs/components'
-// import Taro, { useRouter } from '@tarojs/taro'
-import { BrowserRouter, Routes, Route, Link, useParams, Outlet } from 'react-router-dom'
+import Taro from '@tarojs/taro'
+import { BrowserRouter, Routes, Route, Link, useParams, Outlet, NavLink } from 'react-router-dom'
 import './index.scss'
 
 import { NavBar, Button } from 'tard'
@@ -31,6 +31,11 @@ export default class Index extends Component {
   }
 
   render() {
+    let activeStyle = {
+      textDecoration: "underline",
+      color: 'red'
+    };
+
     return (
       <BrowserRouter>
         <a></a>
@@ -73,17 +78,31 @@ export default class Index extends Component {
           打印 location
         </Button>
 
+        <Button
+          type="primary"
+          onClick={() => {
+            Taro.navigateTo({ url: '../hash-router/index?name=hashrouter&age=30' })
+          }}
+        >
+          Go to "hash-router" page
+        </Button>
+
         <NavBar title="普通路由" />
 
         <View className="drawer-box">
           <View className="box-item">
-            <Link to="/pages/router/index/view1?a=1&b=2">view1</Link>
+            <NavLink
+              to="/pages/router/index/view1?a=1&b=2"
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              view1
+            </NavLink>
           </View>
           <View className="box-item">
-            <Link to="/pages/router/index/view2#a=3&b=4">view2</Link>
+            <NavLink to="/pages/router/index/view2#a=3&b=4" style={({ isActive }) => (isActive ? activeStyle : undefined)}>view2</NavLink>
           </View>
           <View className="box-item">
-            <Link to="/pages/router/index/2?a=1&b=2#a=3&b=4">view3</Link>
+            <NavLink to="/pages/router/index/2?a=1&b=2#a=3&b=4" style={({ isActive }) => (isActive ? activeStyle : undefined)}>view3</NavLink>
           </View>
         </View>
 
@@ -150,7 +169,7 @@ function SentInvoices() {
 }
 function SentInvoicesBox() {
   return (
-    <div style={{backgroundColor: 'red'}}>
+    <div style={{ backgroundColor: 'red' }}>
       <Text>SentInvoicesBox</Text>
       <Outlet />
     </div>

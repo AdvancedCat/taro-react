@@ -1,9 +1,10 @@
 export default defineAppConfig({
   pages: [
-    'pages/hash-router/index',
-    'pages/browser-router/index',
     'pages/index/index',
     'pages/history/index',
+    'pages/browser-router/index',
+    'pages/hash-router/index',
+    'pages/router-object/index',
   ],
   window: {
     backgroundTextStyle: 'light',

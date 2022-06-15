@@ -1,3 +1,3 @@
 export default definePageConfig({
-  navigationBarTitleText: 'Hash路由'
+  navigationBarTitleText: 'HashRouter'
 })
