@@ -1,10 +1,8 @@
 export default defineAppConfig({
   pages: [
-    'pages/index/index',
-    'pages/alipay-scan/index',
-    'pages/transition/index',
-    'pages/history/index',
     'pages/browser-router/index',
+    'pages/index/index',
+    'pages/history/index',
     'pages/hash-router/index',
   ],
   window: {

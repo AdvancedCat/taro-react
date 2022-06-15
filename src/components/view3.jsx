@@ -6,7 +6,7 @@ export default function View3() {
   return (
     <div>
       <p>I am view3</p>
-      <p>href: {window.location.href}</p>
+      <p>current href: {window.location.href}</p>
       <p>id: {id}</p>
     </div>
   )

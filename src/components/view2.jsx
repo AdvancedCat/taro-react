@@ -5,7 +5,7 @@ export default function View2() {
   return (
     <div>
       <p>I am view2</p>
-      <p>href: {window.location.href}</p>
+      <p>current href: {window.location.href}</p>
     </div>
   )
 }

@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <p>I am home</p>
-      <p>href: {window.location.href}</p>
+      <p>current href: {window.location.href}</p>
     </div>
   )
 }

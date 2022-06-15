@@ -18,10 +18,11 @@
   justify-content: center;
 
   .box-item{
-    width: 100px;
+    // width: 100px;
     border-radius: 5px;
     border: 1px solid black;
     text-align: center;
+    flex-grow: 1;
   }
 }
 

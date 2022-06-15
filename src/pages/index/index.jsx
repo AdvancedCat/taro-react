@@ -14,20 +14,6 @@ export default class Index extends Component {
   componentWillMount() {}
 
   componentDidMount() {
-    // 定时器回调batch updates
-    // setTimeout(() => {
-    //   this.setState({count: ++this.state.count})
-    //   console.log('A.count结果:', this.state.count)
-    //   this.setState({count: ++this.state.count})
-    //   console.log('B.count结果:', this.state.count)
-    // }, 3000);
-    // // 原生回调事件
-    // this.textRef.current.addEventListener('tap', ()=>{
-    //   this.setState({count: ++this.state.count})
-    //   console.log('C.count结果:', this.state.count)
-    //   this.setState({count: ++this.state.count})
-    //   console.log('D.count结果:', this.state.count)
-    // })
     console.log('window:', window)
     console.log('getCurrentPages:', Taro.getCurrentPages())
   }

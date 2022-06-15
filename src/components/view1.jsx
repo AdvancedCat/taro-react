@@ -1,11 +1,13 @@
 import React from 'react'
-// import { useMatch, useLocation, useHref } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 export default function View1() {
+  let location = useLocation()
   return (
     <div>
       <p>I am view1</p>
-      <p>href: {window.location.href}</p>
+      <p>search: {location.search}</p>
+      <p>current href: {window.location.href}</p>
     </div>
   )
 }
